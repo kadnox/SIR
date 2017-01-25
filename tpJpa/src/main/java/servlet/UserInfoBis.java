@@ -23,32 +23,32 @@ import domain.Personne;
 
 @WebServlet(name = "userinfobis", urlPatterns = { "/UserInfoBis" })
 public class UserInfoBis extends HttpServlet {
+	private EntityManagerFactory factory;
+	private EntityManager manager;
+	
+	public void init(){
+		this.factory = Persistence.createEntityManagerFactory("example");
+		this.manager = factory.createEntityManager();
+	}
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("example");
-		EntityManager manager = factory.createEntityManager();
-
+		
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
-		
-		try {
-		
-				
-				Personne HTSA = new Personne();
-				
-				HTSA.setPrenom(request.getParameter("firstname"));
-				HTSA.setNom(request.getParameter("name"));
 
-				
-				manager.persist(HTSA);
+		try {
+			manager.persist(new Personne(request.getParameter("name"), request.getParameter("firstname")));
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		tx.commit();
 		
+	}
+	
+	public void destroy(){
 		manager.close();
 		factory.close();
-		
 	}
 }

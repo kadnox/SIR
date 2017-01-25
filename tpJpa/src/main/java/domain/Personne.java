@@ -9,19 +9,24 @@ import javax.persistence.OneToMany;
 @Entity
 public class Personne {
 
-	private int id ;
+	private int id;
 	private String nom;
 	private String prenom;
 	private Collection<Personne> amis;
 	private Collection<Appareil> appareils;
 	private Collection<Maison> maisons;
 
-	public Personne(){
-		
+	public Personne() {
+
 	}
-	
-	public Personne(String nom, String prenom, Collection<Personne> amis,
-			Collection<Appareil> appareils, Collection<Maison> maisons) {
+
+	public Personne(String nom, String prenom) {
+		this.nom = nom;
+		this.prenom = prenom;
+	}
+
+	public Personne(String nom, String prenom, Collection<Personne> amis, Collection<Appareil> appareils,
+			Collection<Maison> maisons) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.amis = amis;
@@ -38,7 +43,7 @@ public class Personne {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
@@ -63,8 +68,8 @@ public class Personne {
 	public void setAmis(Collection<Personne> amis) {
 		this.amis = amis;
 	}
-	
-	@OneToMany(mappedBy="proprio", cascade = CascadeType.PERSIST)
+
+	@OneToMany(mappedBy = "proprio", cascade = CascadeType.PERSIST)
 	public Collection<Appareil> getAppareils() {
 		return appareils;
 	}
@@ -72,8 +77,8 @@ public class Personne {
 	public void setAppareils(Collection<Appareil> appareils) {
 		this.appareils = appareils;
 	}
-	
-	@OneToMany(mappedBy="proprio", cascade = CascadeType.PERSIST)
+
+	@OneToMany(mappedBy = "proprio", cascade = CascadeType.PERSIST)
 	public Collection<Maison> getMaisons() {
 		return maisons;
 	}
