@@ -1,6 +1,8 @@
 package domain;
 
 import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -47,7 +49,7 @@ public class Maison {
 		this.adresse = adresse;
 	}
 	
-	@OneToMany(mappedBy="maison")
+	@OneToMany(mappedBy="maison", cascade = CascadeType.PERSIST)
 	public Collection<Chauffage> getChauffages() {
 		return chauffages;
 	}

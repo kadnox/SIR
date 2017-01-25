@@ -45,9 +45,11 @@ public class JpaTest {
 	}
 	
 	private static void create(EntityManager manager) {
-		Long nbPersonne = (Long) manager.createQuery("select count(p) FROM Person p").getSingleResult();
+		Long nbPersonne = (Long) manager.createQuery("select count(p) FROM Personne p").getSingleResult();
 		
 		if(nbPersonne == 0) {
+			
+
 			Collection<Appareil> appList1 = new ArrayList<Appareil>();
 			Collection<Appareil> appList2 = new ArrayList<Appareil>();
 			Collection<Appareil> appList3 = new ArrayList<Appareil>();
