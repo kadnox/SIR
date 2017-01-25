@@ -19,9 +19,10 @@ public class Appareil {
 		
 	}
 	
-	public Appareil(String nom, float consomation) {
+	public Appareil(String nom, float consomation,Personne proprio) {
 		this.nom = nom;
 		this.consomation = consomation;
+		this.proprio = proprio;
 	}
 	
 	

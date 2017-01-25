@@ -63,6 +63,7 @@ public class Personne {
 	public void setAmis(Collection<Personne> amis) {
 		this.amis = amis;
 	}
+	
 	@OneToMany(mappedBy="proprio", cascade = CascadeType.PERSIST)
 	public Collection<Appareil> getAppareils() {
 		return appareils;
@@ -71,6 +72,7 @@ public class Personne {
 	public void setAppareils(Collection<Appareil> appareils) {
 		this.appareils = appareils;
 	}
+	
 	@OneToMany(mappedBy="proprio", cascade = CascadeType.PERSIST)
 	public Collection<Maison> getMaisons() {
 		return maisons;

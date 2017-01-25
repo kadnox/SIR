@@ -31,14 +31,7 @@ public class UserInfoBis extends HttpServlet {
 		tx.begin();
 		
 		try {
-			//Long nbPersonne = (Long) manager.createQuery("select count(p) FROM Person p").getSingleResult();
-			
-//			if(nbPersonne == 0) {
-//				response.setContentType("text/html");
-//
-//				PrintWriter out = response.getWriter();
-//
-//				out.println("<HTML>\n<BODY>\n" + "<H1>Recapitulatif des informations</H1>\n" + "<UL>\n" + manager.createQuery("select count(p) FROM Person p")+"</BODY></HTML>");
+		
 				
 				Personne HTSA = new Personne();
 				
@@ -48,7 +41,6 @@ public class UserInfoBis extends HttpServlet {
 				
 				manager.persist(HTSA);
 
-//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

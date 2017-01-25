@@ -49,21 +49,25 @@ public class JpaTest {
 		
 		if(nbPersonne == 0) {
 			
-
 			Collection<Appareil> appList1 = new ArrayList<Appareil>();
 			Collection<Appareil> appList2 = new ArrayList<Appareil>();
 			Collection<Appareil> appList3 = new ArrayList<Appareil>();
 			
-			Appareil tv = new Appareil("TV",120);
-			Appareil lDVD = new Appareil("lecteurDVD",19);
-			Appareil hc = new Appareil("homecinema",200);
 			
-			Appareil mo = new Appareil("micro ondes",200);
-			Appareil fo = new Appareil("four",200);
-			Appareil tel = new Appareil("smart phone",100);
+			Personne HTSA = new Personne();
+			Personne Yvann = new Personne();
+			Personne Thomas = new Personne();
 			
-			Appareil table = new Appareil("tablette",80);
-			Appareil impr = new Appareil("imprimante",120);
+			Appareil tv = new Appareil("TV",120,HTSA);
+			Appareil lDVD = new Appareil("lecteurDVD",19,HTSA);
+			Appareil hc = new Appareil("homecinema",200,HTSA);
+			
+			Appareil mo = new Appareil("micro ondes",200,Thomas);
+			Appareil fo = new Appareil("four",200,Thomas);
+			Appareil tel = new Appareil("smart phone",100,Thomas);
+			
+			Appareil table = new Appareil("tablette",80,Yvann);
+			Appareil impr = new Appareil("imprimante",120,Yvann);
 			
 			appList1.add(tv);
 			appList1.add(lDVD);
@@ -75,24 +79,6 @@ public class JpaTest {
 			
 			appList3.add(table);
 			appList3.add(impr);
-			
-			Personne HTSA = new Personne();
-			
-			HTSA.setPrenom("Hedi Theo");
-			HTSA.setNom("Sahraoui");
-			HTSA.setAppareils(appList1);
-			
-			Personne Yvann = new Personne();
-			
-			Yvann.setPrenom("Yvann");
-			Yvann.setNom("Josso");
-			Yvann.setAppareils(appList2);
-			
-			Personne Thomas = new Personne();
-			
-			Thomas.setPrenom("Thomas");
-			Thomas.setNom("Gregoire");
-			Thomas.setAppareils(appList3);
 			
 			Chauffage ch1 = new Chauffage(50);
 			Chauffage ch2 = new Chauffage(60);
@@ -106,6 +92,21 @@ public class JpaTest {
 			Collection<Chauffage> chList2 = new ArrayList<Chauffage>();
 			Collection<Chauffage> chList3 = new ArrayList<Chauffage>();
 			
+			Maison maison1 = new Maison("5 square Dr Guerin",chList1,50,2,Yvann);
+			Maison maison2 = new Maison("64 boulevard Raymond Poincarré",chList2,80,3,HTSA);
+			Maison maison3 = new Maison("4 boulevard Solferino",chList3,60,2,Thomas);
+			
+			ch1.setMaison(maison1);
+			ch2.setMaison(maison1);
+			ch7.setMaison(maison1);
+			
+			ch3.setMaison(maison2);
+			ch4.setMaison(maison2);
+			
+			ch6.setMaison(maison3);
+			ch5.setMaison(maison3);
+			
+			
 			chList1.add(ch1);
 			chList1.add(ch2);
 			chList1.add(ch7);
@@ -116,25 +117,6 @@ public class JpaTest {
 			chList3.add(ch5);
 			chList3.add(ch6);
 			
-			Maison maison1 = new Maison();
-			Maison maison2 = new Maison();
-			Maison maison3 = new Maison();
-			
-			maison1.setNbPieces(2);
-			maison2.setNbPieces(3);
-			maison3.setNbPieces(2);
-			
-			maison1.setTaille(50);
-			maison2.setTaille(80);
-			maison3.setTaille(60);
-			
-			maison1.setAdresse("5 square Dr Guerin");
-			maison2.setAdresse("64 boulevard Raymond Poincarré");
-			maison3.setAdresse("4 boulevard Solferino");
-			
-			maison1.setProprio(HTSA);
-			maison2.setProprio(Yvann);
-			maison3.setProprio(Thomas);
 			
 			maison1.setChauffages(chList1);
 			maison2.setChauffages(chList2);
@@ -143,6 +125,33 @@ public class JpaTest {
 			Collection<Personne> poteHtsa = new ArrayList<Personne>();
 			Collection<Personne> poteYvann = new ArrayList<Personne>();
 			Collection<Personne> poteThomas = new ArrayList<Personne>();
+			
+			Collection<Maison> maisonHtsa = new ArrayList<Maison>();
+			Collection<Maison> maisonYvann = new ArrayList<Maison>();
+			Collection<Maison> maisonThomas = new ArrayList<Maison>();
+			
+			maisonHtsa.add(maison3);
+			maisonThomas.add(maison2);
+			maisonYvann.add(maison1);
+			
+			
+			HTSA.setPrenom("Hedi Theo");
+			HTSA.setNom("Sahraoui");
+			HTSA.setAppareils(appList1);
+			HTSA.setMaisons(maisonHtsa);
+			
+			
+			Yvann.setPrenom("Yvann");
+			Yvann.setNom("Josso");
+			Yvann.setAppareils(appList2);
+			Yvann.setMaisons(maisonYvann);
+			
+			
+			Thomas.setPrenom("Thomas");
+			Thomas.setNom("Gregoire");
+			Thomas.setAppareils(appList3);
+			Thomas.setMaisons(maisonThomas);
+			
 			
 			poteHtsa.add(Yvann);
 			poteHtsa.add(Thomas);

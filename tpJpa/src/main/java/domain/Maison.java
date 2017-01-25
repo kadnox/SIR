@@ -23,12 +23,13 @@ public class Maison {
 
 	}
 
-	public Maison(String adresse, Collection<Chauffage> chauffages, float taille, int nbPieces) {
+	public Maison(String adresse, Collection<Chauffage> chauffages, float taille, int nbPieces,Personne proprio) {
 		
 		this.adresse = adresse;
 		this.chauffages = chauffages;
 		this.taille = taille;
 		this.nbPieces = nbPieces;
+		this.proprio = proprio;
 	}
 	
 	@Id
