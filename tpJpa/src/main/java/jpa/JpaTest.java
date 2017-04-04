@@ -58,16 +58,45 @@ public class JpaTest {
 			Personne Yvann = new Personne();
 			Personne Thomas = new Personne();
 			
-			Appareil tv = new Appareil("TV",120,HTSA);
-			Appareil lDVD = new Appareil("lecteurDVD",19,HTSA);
-			Appareil hc = new Appareil("homecinema",200,HTSA);
+			Appareil tv = new Appareil();
+			tv.setNom("TV");
+			tv.setConsomation(120);
+			tv.setProprio(HTSA);
 			
-			Appareil mo = new Appareil("micro ondes",200,Thomas);
-			Appareil fo = new Appareil("four",200,Thomas);
-			Appareil tel = new Appareil("smart phone",100,Thomas);
+			Appareil lDVD = new Appareil();
+			lDVD.setNom("lecteurDVD");
+			lDVD.setConsomation(19);
+			lDVD.setProprio(HTSA);
 			
-			Appareil table = new Appareil("tablette",80,Yvann);
-			Appareil impr = new Appareil("imprimante",120,Yvann);
+			Appareil hc = new Appareil();
+			hc.setNom("homecinema");
+			hc.setConsomation(200);
+			hc.setProprio(HTSA);
+			
+			Appareil mo = new Appareil();
+			mo.setNom("micro_ondes");
+			mo.setConsomation(200);
+			mo.setProprio(Thomas);
+			
+			Appareil fo = new Appareil();
+			fo.setNom("four");
+			fo.setConsomation(200);
+			fo.setProprio(Thomas);
+			
+			Appareil tel = new Appareil();
+			tel.setNom("smart_phone");
+			tel.setConsomation(100);
+			tel.setProprio(Thomas);
+			
+			Appareil table = new Appareil();
+			table.setNom("tablette");
+			table.setConsomation(80);
+			table.setProprio(Yvann);
+			
+			Appareil impr = new Appareil();
+			impr.setNom("imprimante");
+			impr.setConsomation(120);
+			impr.setProprio(Yvann);
 			
 			appList1.add(tv);
 			appList1.add(lDVD);
@@ -80,22 +109,46 @@ public class JpaTest {
 			appList3.add(table);
 			appList3.add(impr);
 			
-			Chauffage ch1 = new Chauffage(50);
-			Chauffage ch2 = new Chauffage(60);
-			Chauffage ch3 = new Chauffage(70);
-			Chauffage ch4 = new Chauffage(60);
-			Chauffage ch5 = new Chauffage(50);
-			Chauffage ch6 = new Chauffage(80);
-			Chauffage ch7 = new Chauffage(80);
+			Chauffage ch1 = new Chauffage();
+			Chauffage ch2 = new Chauffage();
+			Chauffage ch3 = new Chauffage();
+			Chauffage ch4 = new Chauffage();
+			Chauffage ch5 = new Chauffage();
+			Chauffage ch6 = new Chauffage();
+			Chauffage ch7 = new Chauffage();
 			
 			Collection<Chauffage> chList1 = new ArrayList<Chauffage>();
 			Collection<Chauffage> chList2 = new ArrayList<Chauffage>();
 			Collection<Chauffage> chList3 = new ArrayList<Chauffage>();
 			
-			Maison maison1 = new Maison("5 square Dr Guerin",chList1,50,2,Yvann);
-			Maison maison2 = new Maison("64 boulevard Raymond Poincarré",chList2,80,3,HTSA);
-			Maison maison3 = new Maison("4 boulevard Solferino",chList3,60,2,Thomas);
+			Maison maison1 = new Maison();
+			maison1.setAdresse("5 square Dr Guerin");
+			maison1.setChauffages(chList1);
+			maison1.setNbPieces(2);
+			maison1.setTaille(50);
+			maison1.setProprio(Yvann);
 			
+			Maison maison2 = new Maison();
+			maison2.setAdresse("64 boulevard Raymond Poincarré");
+			maison2.setChauffages(chList2);
+			maison2.setNbPieces(3);
+			maison2.setTaille(80);
+			maison2.setProprio(HTSA);
+			
+			Maison maison3 = new Maison();
+			maison3.setAdresse("4 boulevard Solferino");
+			maison3.setChauffages(chList3);
+			maison3.setNbPieces(2);
+			maison3.setTaille(60);
+			maison3.setProprio(Thomas);
+
+			ch1.setConso(50);
+			ch2.setConso(60);
+			ch3.setConso(70);
+			ch4.setConso(60);
+			ch5.setConso(50);
+			ch6.setConso(80);
+			ch7.setConso(80);
 			ch1.setMaison(maison1);
 			ch2.setMaison(maison1);
 			ch7.setMaison(maison1);
