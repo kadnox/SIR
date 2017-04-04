@@ -9,25 +9,29 @@ import javax.persistence.ManyToOne;
 public class Chauffage {
 	
 	private int id;
-	private float conso;
 	private Maison maison;
+	private float conso;
 
-	public float getConso() {
-		return conso;
-	}
+	
+
+	
 	
 	public Chauffage(){
-		
 	}
 
-	public Chauffage(float conso) {
-		this.conso = conso;
+	
+
+	public float getConso() {
+		return this.conso;
 	}
+
+
 
 	public void setConso(float conso) {
 		this.conso = conso;
 	}
-	
+
+
 	@Id
 	@GeneratedValue
 	public int getId() {

@@ -12,16 +12,27 @@ public class Appareil {
 	
 	private int id;
 	private String nom;
-	private float consomation;
 	private Personne proprio;
+	private float conso;
 	
 	public Appareil(){
-		
 	}
 	
-	public Appareil(String nom, float consomation,Personne proprio) {
+
+	
+	public float getConso() {
+		return conso;
+	}
+
+
+	public void setConso(float conso) {
+		this.conso = conso;
+	}
+
+
+
+	public Appareil(String nom, float conso,Personne proprio) {
 		this.nom = nom;
-		this.consomation = consomation;
 		this.proprio = proprio;
 	}
 	
@@ -32,12 +43,7 @@ public class Appareil {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public float getConsomation() {
-		return consomation;
-	}
-	public void setConsomation(float consomation) {
-		this.consomation = consomation;
-	}
+
 	
 	@Id
 	@GeneratedValue
@@ -48,6 +54,7 @@ public class Appareil {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	@ManyToOne
 	public Personne getProprio() {
 		return proprio;

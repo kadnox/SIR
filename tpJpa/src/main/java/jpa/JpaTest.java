@@ -53,49 +53,48 @@ public class JpaTest {
 			Collection<Appareil> appList2 = new ArrayList<Appareil>();
 			Collection<Appareil> appList3 = new ArrayList<Appareil>();
 			
-			
 			Personne HTSA = new Personne();
 			Personne Yvann = new Personne();
 			Personne Thomas = new Personne();
 			
 			Appareil tv = new Appareil();
 			tv.setNom("TV");
-			tv.setConsomation(120);
+			tv.setConso(120);
 			tv.setProprio(HTSA);
 			
 			Appareil lDVD = new Appareil();
 			lDVD.setNom("lecteurDVD");
-			lDVD.setConsomation(19);
+			lDVD.setConso(19);
 			lDVD.setProprio(HTSA);
 			
 			Appareil hc = new Appareil();
 			hc.setNom("homecinema");
-			hc.setConsomation(200);
+			hc.setConso(200);
 			hc.setProprio(HTSA);
 			
 			Appareil mo = new Appareil();
 			mo.setNom("micro_ondes");
-			mo.setConsomation(200);
+			mo.setConso(200);
 			mo.setProprio(Thomas);
 			
 			Appareil fo = new Appareil();
 			fo.setNom("four");
-			fo.setConsomation(200);
+			fo.setConso(200);
 			fo.setProprio(Thomas);
 			
 			Appareil tel = new Appareil();
 			tel.setNom("smart_phone");
-			tel.setConsomation(100);
+			tel.setConso(100);
 			tel.setProprio(Thomas);
 			
 			Appareil table = new Appareil();
 			table.setNom("tablette");
-			table.setConsomation(80);
+			table.setConso(80);
 			table.setProprio(Yvann);
 			
 			Appareil impr = new Appareil();
 			impr.setNom("imprimante");
-			impr.setConsomation(120);
+			impr.setConso(120);
 			impr.setProprio(Yvann);
 			
 			appList1.add(tv);
