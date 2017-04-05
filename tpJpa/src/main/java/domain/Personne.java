@@ -12,6 +12,7 @@ public class Personne {
 	private int id;
 	private String nom;
 	private String prenom;
+	private int age;
 	private Collection<Personne> amis;
 	private Collection<Appareil> appareils;
 	private Collection<Maison> maisons;
@@ -20,19 +21,6 @@ public class Personne {
 
 	}
 
-	public Personne(String nom, String prenom) {
-		this.nom = nom;
-		this.prenom = prenom;
-	}
-
-	public Personne(String nom, String prenom, Collection<Personne> amis, Collection<Appareil> appareils,
-			Collection<Maison> maisons) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.amis = amis;
-		this.appareils = appareils;
-		this.maisons = maisons;
-	}
 
 	@Id
 	@GeneratedValue
@@ -85,6 +73,14 @@ public class Personne {
 
 	public void setMaisons(Collection<Maison> maisons) {
 		this.maisons = maisons;
+	}
+
+	public int getAge() {
+		return this.age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 }

@@ -148,6 +148,7 @@ public class JpaTest {
 			ch5.setConso(50);
 			ch6.setConso(80);
 			ch7.setConso(80);
+			
 			ch1.setMaison(maison1);
 			ch2.setMaison(maison1);
 			ch7.setMaison(maison1);
@@ -168,7 +169,6 @@ public class JpaTest {
 			
 			chList3.add(ch5);
 			chList3.add(ch6);
-			
 			
 			maison1.setChauffages(chList1);
 			maison2.setChauffages(chList2);
@@ -191,18 +191,21 @@ public class JpaTest {
 			HTSA.setNom("Sahraoui");
 			HTSA.setAppareils(appList1);
 			HTSA.setMaisons(maisonHtsa);
+			HTSA.setAge(16);
 			
 			
 			Yvann.setPrenom("Yvann");
 			Yvann.setNom("Josso");
 			Yvann.setAppareils(appList2);
 			Yvann.setMaisons(maisonYvann);
+			Yvann.setAge(21);
 			
 			
 			Thomas.setPrenom("Thomas");
 			Thomas.setNom("Gregoire");
 			Thomas.setAppareils(appList3);
 			Thomas.setMaisons(maisonThomas);
+			Thomas.setAge(22);
 			
 			
 			poteHtsa.add(Yvann);

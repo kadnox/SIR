@@ -9,15 +9,30 @@ public class SingletonEM {
 	private EntityManagerFactory factory;
 	private EntityManager manager;
 
-	public SingletonEM() {
-		super();
+	private SingletonEM() {
 	}
 	
-	//Faire instance bla bla voir ACO
+	private static SingletonEM INSTANCE = new SingletonEM();
 	
+	public static SingletonEM getInstance(){
+		return INSTANCE;
+	}
 	
+	public EntityManager getManager(){
+		return this.manager;
+	}
+	
+	public EntityManagerFactory getFactory(){
+		return this.factory;
+	}
+
 	public void init(){
 		this.factory = Persistence.createEntityManagerFactory("example");
 		this.manager = factory.createEntityManager();
+	}
+	
+	public void destroy(){
+		manager.close();
+		factory.close();
 	}
 }

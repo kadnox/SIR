@@ -18,7 +18,7 @@ public class MyServlet extends HttpServlet {
             throws ServletException, IOException {
             
         PrintWriter p = new PrintWriter(resp.getOutputStream());
-        p.print("Hello world SIR");
+        p.print("Hello test world SIR");
         p.flush();
         
     }
@@ -26,7 +26,6 @@ public class MyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        // TODO Auto-generated method stub
         super.doPost(req, resp);
     }    
 }
