@@ -44,6 +44,10 @@ public class UserInfoBis extends HttpServlet {
 			personne.setPrenom(request.getParameter("prenom"));
 			personne.setNom(request.getParameter("nom"));
 			personne.setAge(Integer.parseInt(request.getParameter("age")));
+//			Maison maison = new Maison();
+//			maison.setAdresse(request.getParameter("add"));
+//			maison.setNbPieces(Integer.parseInt(request.getParameter("nbPiece")));
+//			maison.setProprio(personne);
 			manager.persist(personne);
 
 		} catch (Exception e) {
@@ -69,6 +73,7 @@ public class UserInfoBis extends HttpServlet {
 	
 		temp += "<ul>";
 		for (Personne pers : personnes) {
+			temp += "<h2>Personne " + pers.getId()+"</h2>";
 			temp += "<li><ul>";
 			temp += "<li>Nom : " + pers.getNom()+"</li>";
 			temp += "<li>Prenom : " + pers.getPrenom()+"</li>";
