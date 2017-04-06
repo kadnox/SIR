@@ -1,10 +1,13 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
 public class Personne {
@@ -18,7 +21,7 @@ public class Personne {
 	private Collection<Maison> maisons;
 
 	public Personne() {
-
+		this.maisons = new ArrayList<Maison>();
 	}
 
 
@@ -47,7 +50,8 @@ public class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
+	
+	@JsonIgnore
 	@ManyToMany
 	public Collection<Personne> getAmis() {
 		return amis;
